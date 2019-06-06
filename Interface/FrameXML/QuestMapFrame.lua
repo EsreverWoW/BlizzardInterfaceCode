@@ -624,7 +624,7 @@ function QuestLogQuests_AddQuestButton(prevButton, questLogIndex, poiTable, titl
 			end
 		end
 		if ( requiredMoney > playerMoney ) then
-			local objectiveFrame = QuestScrollFrame.objectiveFramePool:Aquire();
+			local objectiveFrame = QuestScrollFrame.objectiveFramePool:Acquire();
 			objectiveFrame.questID = questID;
 			objectiveFrame:Show();
 			objectiveFrame.Text:SetText(GetMoneyString(playerMoney).." / "..GetMoneyString(requiredMoney));
