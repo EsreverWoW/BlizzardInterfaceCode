@@ -73,7 +73,7 @@ local AzeriteItem =
 
 			Returns =
 			{
-				{ Name = "isAzeriteItemAtMaxLevel", Type = "bool", Nilable = false },
+				{ Name = "isAtMax", Type = "bool", Nilable = false },
 			},
 		},
 		{

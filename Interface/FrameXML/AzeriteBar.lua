@@ -7,8 +7,11 @@ local AZERITE_XP_BAR_EVENTS = {
 AzeriteBarMixin = CreateFromMixins(StatusTrackingBarMixin);
 
 function AzeriteBarMixin:ShouldBeVisible()
-	local IsMaxLevel = C_AzeriteItem.IsAzeriteItemAtMaxLevel();
-	return C_AzeriteItem.HasActiveAzeriteItem() and not IsMaxLevel; 
+	local isMaxLevel = C_AzeriteItem.IsAzeriteItemAtMaxLevel();
+	if isMaxLevel then
+		return false;
+	end
+	return C_AzeriteItem.HasActiveAzeriteItem();
 end
 
 function AzeriteBarMixin:Update()
